@@ -1,0 +1,47 @@
+package me.sathish.graphqlrecipe.controller;
+
+import me.sathish.graphqlrecipe.data.Run;
+import me.sathish.graphqlrecipe.garminruns.data.GarminRun;
+import me.sathish.graphqlrecipe.garminruns.service.GarminRunService;
+import me.sathish.graphqlrecipe.stravaruns.data.StravaRun;
+import me.sathish.graphqlrecipe.stravaruns.service.StravaRunService;
+import org.springframework.graphql.data.method.annotation.QueryMapping;
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Controller
+public class RunController {
+    private final GarminRunService garminRunService;
+    private final StravaRunService stravaRunService;
+    public RunController(GarminRunService garminRunService, StravaRunService stravaRunService) {
+        this.garminRunService = garminRunService;
+        this.stravaRunService = stravaRunService;
+    }
+    @QueryMapping
+    public List<Run> allOrders() {
+        garminRunService.getAllRuns();
+        stravaRunService.getAllRuns();
+        List<GarminRun> garminRuns = garminRunService.getAllRuns();
+        List<StravaRun> stravaRuns = stravaRunService.getAllRuns();
+        List<Run> combinedRuns = new ArrayList<>();
+        garminRuns.forEach(garminRun -> combinedRuns.add(new Run(
+                garminRun.getId(),
+                garminRun.getName(),
+                garminRun.getDescription(),
+                garminRun.getDate(),
+                garminRun.getDuration(),
+                garminRun.getDistance()
+        )));
+        stravaRuns.forEach(stravaRun -> combinedRuns.add(new Run(
+                stravaRun.getId(),
+                stravaRun.getName(),
+                stravaRun.getDate(),
+                stravaRun.getDuration(),
+                stravaRun.getDistance()
+        )));
+        return combinedRuns;
+    }
+}

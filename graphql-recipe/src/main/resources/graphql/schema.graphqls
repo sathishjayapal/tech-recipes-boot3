@@ -2,8 +2,6 @@ type Run{
     id: ID!
     name: String!
     miles: String!
-    runTime: String!
-    calories: String!
     errorMessage: String!
     errorStackTrace: String!
 }
