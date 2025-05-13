@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: garminrun-recipe
+  datasource:
+    url: ${garmindb}
+    driverClassName: org.postgresql.Driver
+    username: ${darmindb_user}
+    password: ${darmindb_password}
+  flyway:
+    locations: classpath:db/migration
+  jpa:
+    hibernate:
+    show-sql: true
+    open-in-view: false
+server:
+  port: 8085
