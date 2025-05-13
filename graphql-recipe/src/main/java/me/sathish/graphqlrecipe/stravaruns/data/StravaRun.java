@@ -7,8 +7,7 @@ public class StravaRun {
     private String duration;
     private String distance;
 
-    public StravaRun(String id, String name, String date, String duration,
-                     String distance) {
+    public StravaRun(String id, String name, String date, String duration, String distance) {
         this.id = id;
         this.name = name;
         this.date = date;

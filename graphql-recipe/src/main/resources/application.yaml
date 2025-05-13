@@ -1,0 +1,19 @@
+server:
+  port: 8086
+spring:
+  application:
+    name: graph-recipe
+  graphql:
+    graphiql:
+      enabled: true
+    schema:
+      printer:
+        enabled: true
+  datasource:
+    url: ${garmindb}
+    driverClassName: org.postgresql.Driver
+    username: ${darmindb_user}
+    password: ${darmindb_password}
+  jpa:
+    hibernate:
+    show-sql: true

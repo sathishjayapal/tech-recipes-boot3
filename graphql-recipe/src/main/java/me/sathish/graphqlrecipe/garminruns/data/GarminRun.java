@@ -8,8 +8,7 @@ public class GarminRun {
     private String duration;
     private String distance;
 
-    public GarminRun(String id, String name, String description, String date, String duration,
-                     String distance) {
+    public GarminRun(String id, String name, String description, String date, String duration, String distance) {
         this.id = id;
         this.name = name;
         this.description = description;

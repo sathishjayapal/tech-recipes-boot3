@@ -5,6 +5,23 @@ type Run{
     errorMessage: String!
     errorStackTrace: String!
 }
+type GarminRun{
+    id: ID!
+    name: String!
+    description: String!
+    distance: String!
+    errorMessage: String!
+    errorStackTrace: String!
+}
+type StravaRun{
+    id: ID
+    name: String!
+    miles: String!
+    errorMessage: String
+    errorStackTrace: String
+}
+
 type Query {
     getAllRuns: [Run]
+    getGarminRuns: [GarminRun]
 }
