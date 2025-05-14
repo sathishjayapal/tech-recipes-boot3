@@ -1,12 +1,12 @@
-package me.sathish.graphqlrecipe.controller;
+package me.sathish.graphqlrecipe.web.controller;
 
 import java.util.ArrayList;
 import java.util.List;
-import me.sathish.graphqlrecipe.data.Run;
-import me.sathish.graphqlrecipe.garminruns.data.GarminRun;
-import me.sathish.graphqlrecipe.garminruns.service.GarminRunService;
-import me.sathish.graphqlrecipe.stravaruns.data.StravaRun;
-import me.sathish.graphqlrecipe.stravaruns.service.StravaRunService;
+import me.sathish.graphqlrecipe.common.Run;
+import me.sathish.graphqlrecipe.garminruns.GarminRun;
+import me.sathish.graphqlrecipe.garminruns.GarminRunService;
+import me.sathish.graphqlrecipe.stravaruns.StravaRun;
+import me.sathish.graphqlrecipe.stravaruns.StravaRunService;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

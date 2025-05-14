@@ -1,8 +1,8 @@
-package me.sathish.graphqlrecipe.garminruns.controller;
+package me.sathish.graphqlrecipe.web.controller;
 
 import java.util.List;
-import me.sathish.graphqlrecipe.garminruns.data.GarminRun;
-import me.sathish.graphqlrecipe.garminruns.service.GarminRunService;
+import me.sathish.graphqlrecipe.garminruns.GarminRun;
+import me.sathish.graphqlrecipe.garminruns.GarminRunService;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,11 +1,10 @@
-package me.sathish.graphqlrecipe.stravaruns.controller;
+package me.sathish.graphqlrecipe.web.controller;
 
 import java.util.List;
-import me.sathish.graphqlrecipe.stravaruns.data.StravaRun;
-import me.sathish.graphqlrecipe.stravaruns.service.StravaRunService;
+import me.sathish.graphqlrecipe.stravaruns.StravaRun;
+import me.sathish.graphqlrecipe.stravaruns.StravaRunService;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/strava")

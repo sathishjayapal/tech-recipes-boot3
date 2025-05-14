@@ -1,7 +1,7 @@
-package me.sathish.graphqlrecipe.stravaruns.service;
+package me.sathish.graphqlrecipe.stravaruns;
 
 import java.util.List;
-import me.sathish.graphqlrecipe.stravaruns.data.StravaRun;
+
 import org.springframework.stereotype.Service;
 
 @Service
