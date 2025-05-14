@@ -24,4 +24,5 @@ type StravaRun{
 type Query {
     getAllRuns: [Run]
     getGarminRuns: [GarminRun]
+    getStravaRuns: [StravaRun]
 }

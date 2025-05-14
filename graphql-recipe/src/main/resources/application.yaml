@@ -9,6 +9,7 @@ spring:
     schema:
       printer:
         enabled: true
+    path: /sathish_runs
   datasource:
     url: ${garmindb}
     driverClassName: org.postgresql.Driver
@@ -17,3 +18,7 @@ spring:
   jpa:
     hibernate:
     show-sql: true
+management:
+  endpoint:
+    health:
+      show-details: always

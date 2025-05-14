@@ -9,8 +9,10 @@ import me.sathish.graphqlrecipe.stravaruns.data.StravaRun;
 import me.sathish.graphqlrecipe.stravaruns.service.StravaRunService;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("/runs")
 public class RunController {
     private final GarminRunService garminRunService;
     private final StravaRunService stravaRunService;

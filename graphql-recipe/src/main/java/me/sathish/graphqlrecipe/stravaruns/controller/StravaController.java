@@ -3,7 +3,9 @@ package me.sathish.graphqlrecipe.stravaruns.controller;
 import java.util.List;
 import me.sathish.graphqlrecipe.stravaruns.data.StravaRun;
 import me.sathish.graphqlrecipe.stravaruns.service.StravaRunService;
+import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/strava")
@@ -18,6 +20,10 @@ public class StravaController {
     // For example:
     @GetMapping("/runs")
     public List<StravaRun> getAllRuns() {
+        return stravaRunService.getAllRuns();
+    }
+    @QueryMapping
+    public List<StravaRun> getStravaRuns() {
         return stravaRunService.getAllRuns();
     }
 }
