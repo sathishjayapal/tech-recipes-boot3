@@ -1,14 +1,13 @@
 package me.sathish.graphqlrecipe.runner;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import me.sathish.graphqlrecipe.garminruns.GarminRun;
 import me.sathish.graphqlrecipe.stravaruns.StravaRun;
 
 import java.util.HashSet;
 import java.util.Set;
-
+@Entity
+@Table(name="runners")
 public class Runner {
     @Id
     @GeneratedValue

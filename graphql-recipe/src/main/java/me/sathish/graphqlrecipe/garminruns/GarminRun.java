@@ -1,10 +1,9 @@
 package me.sathish.graphqlrecipe.garminruns;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import me.sathish.graphqlrecipe.runner.Runner;
-
+@Entity
+@Table(name="garminruns")
 public class GarminRun {
     @Id
     @GeneratedValue
@@ -17,7 +16,9 @@ public class GarminRun {
     @ManyToOne
     private Runner runnerUser;
 
-    public GarminRun(String id, String name, String description, String date, String duration, String distance, Runner runnerUser) {
+    public GarminRun(String id, String name, String description,
+                     String date, String duration, String distance,
+                     Runner runnerUser) {
         this.id = id;
         this.name = name;
         this.description = description;
