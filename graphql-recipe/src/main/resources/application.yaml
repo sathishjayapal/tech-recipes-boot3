@@ -16,8 +16,10 @@ spring:
     username: ${darmindb_user}
     password: ${darmindb_password}
   jpa:
-    hibernate:
     show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create-drop
 management:
   endpoint:
     health:

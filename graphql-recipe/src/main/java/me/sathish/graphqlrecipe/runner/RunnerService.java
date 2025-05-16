@@ -21,12 +21,4 @@ public class RunnerService {
         // Logic to fetch the runner from the database or any other source
         return runnerRepo.getReferenceById(1L);
     }
-    @PostConstruct
-    public void init() {
-        // This method is called after the bean is created
-        // You can use it to initialize any data or perform setup tasks
-        Runner runner= new Runner(1, "John Doe", "sathishk.dot@gmail.com");
-        runnerRepo.save(runner);
-        System.out.println("RunnerService initialized");
-    }
 }

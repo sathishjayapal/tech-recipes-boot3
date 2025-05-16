@@ -19,6 +19,7 @@ public class GarminController {
     // For example:
     @GetMapping("/runs")
     public List<GarminRun> getAllRuns() {
+
         return garminRunService.getAllRuns();
     }
     @QueryMapping

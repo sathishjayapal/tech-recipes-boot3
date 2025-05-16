@@ -1,13 +1,21 @@
 package me.sathish.graphqlrecipe.stravaruns;
 
+import jakarta.persistence.*;
+import me.sathish.graphqlrecipe.runner.Runner;
+@Entity
+@Table(name="strava_runs")
 public class StravaRun {
-    private String id;
+    @Id
+    @GeneratedValue
+    private Integer id;
     private String name;
     private String date;
     private String duration;
     private String distance;
-
-    public StravaRun(String id, String name, String date, String duration, String distance) {
+    @ManyToOne
+    private Runner runnerUser;
+    public StravaRun() {}
+    public StravaRun(Integer id, String name, String date, String duration, String distance) {
         this.id = id;
         this.name = name;
         this.date = date;
@@ -15,12 +23,11 @@ public class StravaRun {
         this.distance = distance;
     }
 
-    // Getters and Setters
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

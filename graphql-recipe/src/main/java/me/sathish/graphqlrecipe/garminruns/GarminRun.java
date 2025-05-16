@@ -3,11 +3,11 @@ package me.sathish.graphqlrecipe.garminruns;
 import jakarta.persistence.*;
 import me.sathish.graphqlrecipe.runner.Runner;
 @Entity
-@Table(name="garminruns")
+@Table(name="garmin_runs")
 public class GarminRun {
     @Id
     @GeneratedValue
-    private String id;
+    private Integer id;
     private String name;
     private String description;
     private String date;
@@ -16,10 +16,9 @@ public class GarminRun {
     @ManyToOne
     private Runner runnerUser;
 
-    public GarminRun(String id, String name, String description,
+    public GarminRun(String name, String description,
                      String date, String duration, String distance,
                      Runner runnerUser) {
-        this.id = id;
         this.name = name;
         this.description = description;
         this.date = date;
@@ -28,12 +27,15 @@ public class GarminRun {
         this.runnerUser = runnerUser;
     }
 
-    // Getters and Setters
-    public String getId() {
+    public GarminRun() {
+
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

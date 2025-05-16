@@ -14,15 +14,19 @@ public class Runner {
     private Integer id;
     private String name;
     private String email;
-    @OneToMany(mappedBy = "stravaRun")
+    @OneToMany(mappedBy = "runnerUser")
     private Set<StravaRun> stravaRuns = new HashSet<>();
-    @OneToMany(mappedBy = "garminRun")
+    @OneToMany(mappedBy = "runnerUser")
     private Set<GarminRun> garminRuns = new HashSet<>();
-
-    public Runner(Integer id, String name, String email) {
-        this.id = id;
+    @Version
+    private Integer version; // Add this field for optimistic locking
+    public Runner(String name, String email) {
         this.name = name;
         this.email = email;
+    }
+
+    public Runner() {
+
     }
 
     public Integer getId() {
