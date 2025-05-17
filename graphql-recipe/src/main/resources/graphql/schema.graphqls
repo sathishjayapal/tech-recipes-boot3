@@ -1,7 +1,8 @@
 type Run{
     id: ID!
     name: String!
-    miles: String!
+    distance: String!
+    runnerName: String!
     errorMessage: String!
     errorStackTrace: String!
 }
@@ -10,13 +11,19 @@ type GarminRun{
     name: String!
     description: String!
     distance: String!
+    runnerUser: Runner
     errorMessage: String!
     errorStackTrace: String!
+}
+type Runner{
+    id: ID!
+    name: String!
+    email: String!
 }
 type StravaRun{
     id: ID
     name: String!
-    miles: String!
+    distance: String!
     errorMessage: String
     errorStackTrace: String
 }

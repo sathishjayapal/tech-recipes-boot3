@@ -13,6 +13,15 @@ public class GarminRun {
     private String date;
     private String duration;
     private String distance;
+
+    public Runner getRunnerUser() {
+        return runnerUser;
+    }
+
+    public void setRunnerUser(Runner runnerUser) {
+        this.runnerUser = runnerUser;
+    }
+
     @ManyToOne
     private Runner runnerUser;
 

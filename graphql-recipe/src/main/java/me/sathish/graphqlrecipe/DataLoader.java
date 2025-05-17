@@ -23,7 +23,7 @@ public class DataLoader implements ApplicationRunner {
         loadData();
     }
     private void loadData() {
-        Runner runnerSathish= new Runner("John Doe", "sathishk.dot@gmail.com");
+        Runner runnerSathish= new Runner("Sathish J", "sathishk.dot@gmail.com");
         runnerRepo.save(runnerSathish);
         garminRunRepo.saveAll(List.of(
                 new GarminRun("Morning Run",
